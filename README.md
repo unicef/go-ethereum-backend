@@ -50,8 +50,6 @@ services:
             RUN_API: "1"
             DATA_SOURCE_NAME: "root:example@tcp(db:3306)/exchange?charset=utf8mb4,utf8&parseTime=true"
             TEST_DATA_SOURCE_NAME: "root:example@tcp(db:3306)/test_exchange?charset=utf8mb4,utf8&parseTime=true"
-            MongoHost: mongo
-            MongoDBName: "exchange"
             GOMAXPROCS: 4
             DB_MIGRATIONS_PATH: /go/src/github.com/qjouda/dignity-platform/backend/db_migrations
             TEST_DB_USER: root
