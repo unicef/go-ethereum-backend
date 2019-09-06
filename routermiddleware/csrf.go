@@ -16,19 +16,20 @@ func CheckCsrfToken() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Next()
 		return
-		isPost := c.Request.Method == http.MethodPost
-		isPut := c.Request.Method == http.MethodPut
-		isDelete := c.Request.Method == http.MethodDelete
-		isPatch := c.Request.Method == http.MethodPatch
-		if isPost || isPut || isDelete || isPatch {
-			token := c.Request.Header.Get(headerName)
-			savedToken := sessions.Default(c).Get(tokenName)
-			if token != savedToken {
-				c.Abort()
-				c.Status(http.StatusUnauthorized)
-				c.Writer.WriteString("⌐╦╦═─  ▄︻̷̿┻̿═━一")
-			}
-		}
+		// return
+		// isPost := c.Request.Method == http.MethodPost
+		// isPut := c.Request.Method == http.MethodPut
+		// isDelete := c.Request.Method == http.MethodDelete
+		// isPatch := c.Request.Method == http.MethodPatch
+		// if isPost || isPut || isDelete || isPatch {
+		// 	token := c.Request.Header.Get(headerName)
+		// 	savedToken := sessions.Default(c).Get(tokenName)
+		// 	if token != savedToken {
+		// 		c.Abort()
+		// 		c.Status(http.StatusUnauthorized)
+		// 		c.Writer.WriteString("Unauthorized")
+		// 	}
+		// }
 	}
 }
 

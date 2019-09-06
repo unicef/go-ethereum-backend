@@ -14,7 +14,7 @@ import (
 	"github.com/qjouda/dignity-platform/backend/img"
 )
 
-// UploadProfileImage creat a new asset
+// UploadProfileImage uploads new profile image
 func UploadProfileImage(sc datatype.ServiceContainer) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		user := auth.MustGetUser(c)

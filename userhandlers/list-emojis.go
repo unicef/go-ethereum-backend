@@ -7,7 +7,7 @@ import (
 	"github.com/qjouda/dignity-platform/backend/datatype"
 )
 
-// ListEmojis handle get profile route
+// ListEmojis handler for available empojis
 func ListEmojis(sc datatype.ServiceContainer) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		emojis, err := sc.UserService.FindEmojis()

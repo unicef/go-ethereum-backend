@@ -6,12 +6,11 @@ import (
 	"github.com/qjouda/dignity-platform/backend/routermiddleware"
 )
 
-//InjectHandlers injects asset handlers into the application
+// InjectHandlers injects user handlers into the application main router [dependency injection]
 func InjectHandlers(sc datatype.ServiceContainer, rg *gin.RouterGroup) {
 	authenticator := routermiddleware.SessionMustAuth()
 	rg.POST("/register", Register(sc))
 	rg.POST("/login", Login(sc))
-	//rg.POST("/logout", Logout(sc))
 	rg.GET("/logout", Logout(sc))
 	rg.GET("/session", authenticator, SessionGet(sc))
 	rg.DELETE("/session", authenticator, SessionDestroy(sc))

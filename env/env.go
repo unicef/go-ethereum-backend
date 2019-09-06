@@ -56,10 +56,8 @@ func checkRequiredEnvs() {
 	}
 	requiredVars := []string{
 		"BASE_URL",
-		"EMAIL_FROM",
 		"AWS_SES_KEY",
 		"AWS_SES_SECRET",
-		"SLACK_WEBHOOK_URL",
 	}
 	missingFatal := []string{}
 	for _, val := range requiredVars {

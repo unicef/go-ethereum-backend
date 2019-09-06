@@ -12,7 +12,7 @@ import (
 	"github.com/qjouda/dignity-platform/backend/emailer"
 )
 
-//ChangeEmail initiates logged in user email change process
+// ChangeEmail initiates logged in user email change process
 func ChangeEmail(sc datatype.ServiceContainer) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		user := auth.MustGetUser(c)
@@ -50,7 +50,7 @@ func ChangeEmail(sc datatype.ServiceContainer) gin.HandlerFunc {
 	}
 }
 
-//ConfirmChangeEmail confirms email change & updates user's email
+// ConfirmChangeEmail confirms email change & updates user's email
 func ConfirmChangeEmail(sc datatype.ServiceContainer) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		userIDstr, exists := c.GetQuery("userid")

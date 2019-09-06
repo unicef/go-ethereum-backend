@@ -32,6 +32,7 @@ func removeContents(dir string) error {
 }
 
 // LoadRepoDetails loads details of the passed Git link (project name, description, branches)
+// @TODO integration with git is not complete due to project time termincation
 func LoadRepoDetails(sc datatype.ServiceContainer) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		body := struct {

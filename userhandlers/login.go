@@ -8,7 +8,7 @@ import (
 	"github.com/qjouda/dignity-platform/backend/datatype"
 )
 
-//Login login route
+// Login login route
 func Login(sc datatype.ServiceContainer) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		body := struct {
@@ -20,7 +20,7 @@ func Login(sc datatype.ServiceContainer) gin.HandlerFunc {
 		password := "PASS_PLACEOLDER"
 		user, err := sc.UserService.FindByEmail(email)
 		if user == nil {
-			// HACK --> quickly signup a user with only a name
+			// HACK --> quickly signup a user with only a username
 			ethereumAddress, err := sc.Ethereum.CreateNewAddress()
 			if err != nil {
 				c.String(http.StatusBadRequest, err.Error())

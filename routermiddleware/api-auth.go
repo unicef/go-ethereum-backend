@@ -2,7 +2,7 @@ package routermiddleware
 
 import "github.com/gin-gonic/gin"
 
-// APIAuth todo...
+// APIAuth @Todo...
 func APIAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 

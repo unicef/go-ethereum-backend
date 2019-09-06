@@ -30,7 +30,7 @@ services:
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: example
-            MYSQL_DATABASE: exchange
+            MYSQL_DATABASE: database
         ports:
             - "3306:3306"
         tty: true
@@ -48,8 +48,8 @@ services:
             ENVIRONMENT: "development"
             BASE_URL: "http://localhost"
             RUN_API: "1"
-            DATA_SOURCE_NAME: "root:example@tcp(db:3306)/exchange?charset=utf8mb4,utf8&parseTime=true"
-            TEST_DATA_SOURCE_NAME: "root:example@tcp(db:3306)/test_exchange?charset=utf8mb4,utf8&parseTime=true"
+            DATA_SOURCE_NAME: "root:example@tcp(db:3306)/database?charset=utf8mb4,utf8&parseTime=true"
+            TEST_DATA_SOURCE_NAME: "root:example@tcp(db:3306)/test_database?charset=utf8mb4,utf8&parseTime=true"
             GOMAXPROCS: 4
             DB_MIGRATIONS_PATH: /go/src/github.com/qjouda/dignity-platform/backend/db_migrations
             TEST_DB_USER: root
